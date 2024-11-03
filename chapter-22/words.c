@@ -30,5 +30,6 @@ int main(int argc, char* argv[])
 
     printf("There are %d words in %s\n", num_words, filename);
 
+    fclose(fp);
     return 0;
 }
