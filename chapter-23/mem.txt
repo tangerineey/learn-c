@@ -1,0 +1,9 @@
+(a) memmove
+
+(b) strcpy
+This is incorrect and the correct answer is memmove, as the behaviour with
+strcpy is undefined when the source overlaps with the destination.
+
+(c) strncpy
+
+(d) memcpy
