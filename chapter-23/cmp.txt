@@ -1,0 +1,17 @@
+if (strcmp(str, "foo") == 0 || strcmp(str, "baz") == 0 || strcmp(str, "bar") == 0)
+
+if (strstr(str, "foo baz bar")) WRONG
+
+Essentially, instead of trying to find "foo baz bar" in the str, we set the 
+str to be the search term. So it will try to find the part of the str
+that is in "foo#bar#baz" and if does returns a pointer. This means that if 
+"foo" was in the str it would match. The '#' acts as a delimiter so we dont
+have partial matches for example, if the str had "foobar". Thats why we assume
+that the str does not have the # character and is at least 3 characters long
+for a match to even be possible.
+
+
+Answer:
+if (strstr("foo#bar#baz", str) != NULL) …
+
+The assumptions are that str is at least three characters long and doesn't contain the # character.
